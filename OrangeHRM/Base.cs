@@ -11,14 +11,11 @@ namespace OrangeHRM_Project
     {
         static IWebDriver driver = BrowserInit.SeleniumBrowserInit("Chrome");
 
-        string url = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
-
+ //       string url = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
 
         [TestMethod]
         public void LoginFunctionality()
         {
-            BrowserInit.Navigation(url);
-
             LoginMethods log1 = new LoginMethods(driver);
 
             // TestCase-01
@@ -32,12 +29,10 @@ namespace OrangeHRM_Project
             wait.IgnoreExceptionTypes(typeof(NoSuchElementException));
             */
 
-
             // TestCase-02
             log1.LoginNonExistingUser();
             // Implicit Wait to show results
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2000);
-
 
             // TestCase-03
             log1.ValidLogin();

@@ -61,8 +61,7 @@ namespace OrangeHRM_Project
         public void ValidLogin()
         {
             BrowserInit.Navigation(url);
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-
+            
             driver.FindElement(By.Name("username")).SendKeys("Admin");
             driver.FindElement(By.Name("password")).SendKeys("admin123");
             driver.FindElement(By.XPath("//button[@type='submit']")).Click();
