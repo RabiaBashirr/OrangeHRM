@@ -12,7 +12,7 @@ namespace OrangeHRM_Project
     {
         static IWebDriver driver = GeneralMethods.SeleniumBrowserInit("Chrome");
 
- //       string url = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
+        string url = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
 
         [TestMethod]
         public void LoginFunctionality()

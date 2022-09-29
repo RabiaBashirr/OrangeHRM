@@ -36,5 +36,32 @@ namespace OrangeHRM_Project
         {
             driver.Navigate().GoToUrl(url);
         }
+
+
+        /* ******** Locator Methods (locate, SendKeys, Click) ******* */
+        #region Locators
+        // FindElement(locator) method
+        public IWebElement findElement(By locator)
+        {
+            return driver.FindElement(locator);
+        }
+
+        // Send data to locators
+        public void LocateElement(By locator, string input)
+        {
+            IWebElement element = findElement(locator);
+            element.SendKeys(input);
+        }
+
+        // Clicking button
+        public void Click(By locator)
+        {
+            findElement(locator).Click();
+        }
+        #endregion
+
+
+
+
     }
 }
