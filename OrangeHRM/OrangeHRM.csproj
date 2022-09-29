@@ -57,8 +57,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base.cs" />
-    <Compile Include="BrowserInit.cs" />
+    <Compile Include="GeneralMethods.cs" />
     <Compile Include="Login.cs" />
+    <Compile Include="LoginPOM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

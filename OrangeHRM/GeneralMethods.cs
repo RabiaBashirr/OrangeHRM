@@ -11,9 +11,9 @@ using System.Threading.Tasks;
 namespace OrangeHRM_Project
 {
 
-    public class BrowserInit
+    public class GeneralMethods
     {
-        public static IWebDriver driver;
+        public static IWebDriver driver; //ad driver
 
         public static IWebDriver SeleniumBrowserInit(String browserName)
         {

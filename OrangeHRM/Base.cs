@@ -3,13 +3,14 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using System;
+using System.Security.Policy;
 
 namespace OrangeHRM_Project
 {
     [TestClass]
     public class Base
     {
-        static IWebDriver driver = BrowserInit.SeleniumBrowserInit("Chrome");
+        static IWebDriver driver = GeneralMethods.SeleniumBrowserInit("Chrome");
 
  //       string url = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
 
@@ -37,6 +38,31 @@ namespace OrangeHRM_Project
             // TestCase-03
             log1.ValidLogin();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1000);
+        }
+
+
+
+
+        // LoginViaPOM
+        [TestMethod]
+        public void LoginWithPOM()
+        {
+            GeneralMethods.Navigation(url);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10000);
+
+            LoginPOM Lp = new LoginPOM(driver);
+            // TestCase-01: Login without any data
+            Lp.login("", "");
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10000);
+
+            // TestCase-02: Login with non-existing credentials
+            Lp.login("Rabia", "Rabia-01");
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10000);
+
+            // TestCase-03: Login with valid credentials
+            Lp.login("Admin", "admin123");
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10000);
+
         }
     }
 }

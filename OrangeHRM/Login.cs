@@ -29,7 +29,7 @@ namespace OrangeHRM_Project
         public void VerifywithEmptyFields()
         {
             //driver.Url = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
-            BrowserInit.Navigation(url);
+            GeneralMethods.Navigation(url);
 
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             driver.FindElement(By.XPath("//button[@type='submit']")).Click();
@@ -44,7 +44,7 @@ namespace OrangeHRM_Project
         public void LoginNonExistingUser()
         {
             //string url = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
-            BrowserInit.Navigation(url);
+            GeneralMethods.Navigation(url);
 
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             driver.FindElement(By.Name("username")).SendKeys("Rabia");
@@ -59,7 +59,7 @@ namespace OrangeHRM_Project
         // Login with Valid credentials
         public void ValidLogin()
         {
-            BrowserInit.Navigation(url);
+            GeneralMethods.Navigation(url);
             
             driver.FindElement(By.Name("username")).SendKeys("Admin");
             driver.FindElement(By.Name("password")).SendKeys("admin123");
