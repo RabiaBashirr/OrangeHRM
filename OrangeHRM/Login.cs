@@ -23,6 +23,7 @@ namespace OrangeHRM_Project
         }
 
 
+
         #region Login_TC01
         // Tried to login without required fields
 
@@ -57,10 +58,12 @@ namespace OrangeHRM_Project
 
         #region Login_TC03
         // Login with Valid credentials
+
         public void ValidLogin()
         {
             GeneralMethods.Navigation(url);
-            
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+
             driver.FindElement(By.Name("username")).SendKeys("Admin");
             driver.FindElement(By.Name("password")).SendKeys("admin123");
             driver.FindElement(By.XPath("//button[@type='submit']")).Click();
